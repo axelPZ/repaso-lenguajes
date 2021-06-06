@@ -1,0 +1,20 @@
+
+SINTAXIS
+
+	CASE WHEN  "condicion"  THEN  "si se cumple la condicion"  ELSE  "si no se cumple la condicion"  END
+
+//colocas siempre un alias
+
+
+SELECT prod_id, prod_descripcion, CASE WHEN prod_Status=1 THEN 'Habilitado'ELSE 'Deshabilitado' END AS estado FROM productos
+
+
+//me trae las columnas "prod_id" y "prod_descripcion" y le agrega "Habilitado" si es uno y "Desabilitado" si no
+----------------------------------------------------------------------------------------------
+
+//podemos concatenar condiciones
+
+SELECT prod_id, prod_descripcion, CASE prod_Status WHEN 1 THEN 'Habilitado' 
+						   WHEN 0 THEN 'Deshabilitado'
+						   WHEN 2 THEN 'Otro estado' 
+						   END AS estado FROM productos

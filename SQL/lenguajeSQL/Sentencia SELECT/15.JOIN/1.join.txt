@@ -1,0 +1,14 @@
+unir tablas con JOIN ON
+
+
+SELECT ventas_fecha, ventas_NroFactura, ventas_CliID, Cli_razonSocial, VD_prodid, prod_descripcion, prod_Id,
+		 prov_nombre, vd_cantidad, vd_precio, (vd_cantidad * vd_precio) AS parcial	
+		 	FROM ventas
+				JOIN ventas_detalle ON vd_ventasId = ventas_id
+				JOIN productos ON vd_prodId = prod_id
+				JOIN proveedores ON prod_provID = prov_Id
+				JOIN clientes ON ventas_CliID = Cli_id
+
+
+//une todos los datos de las tablas
+

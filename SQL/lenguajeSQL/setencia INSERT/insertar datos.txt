@@ -1,0 +1,23 @@
+
+INSERT INTO alumno (alumno_nombre) VALUES ('axel paez')
+
+//insertamos un alumno
+-------------------------------------------------------------------
+
+//para insertar datos en la BD no importa el orden de las columnas, pero de acuerdo al orden de las columnas tenemos que insertar los datos
+
+
+INSERT INTO productos (prod_descripcion, prod_color, prod_precio) VALUES ('Mesa','blanco',100.5)
+
+
+//insertar varias columnas
+-----------------------------------------------------------------------
+
+
+INSERT INTO productos VALUES ('Mesa','blanco',100.5)
+
+
+ESTA FORMA DE INSERTAR DATOS NO "SIRVE" YA QUE LOS DATOS COLOCADOS POR DEFAULT NO LOS TOMA EN CUENTA
+
+
+

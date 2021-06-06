@@ -1,0 +1,1 @@
+dentro de los parentesis del IN o del NOT IN, la sub-consulta tiene que mandar a llamar solo una columna 

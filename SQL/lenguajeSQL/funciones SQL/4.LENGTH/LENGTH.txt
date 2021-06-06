@@ -1,0 +1,17 @@
+LENGTH()
+
+	columna = la columna que queremos saver la cantidad de caracteres
+
+//nos devuelve la cantidad de caracteres de un string
+----------------------------------------------------------------------------------
+
+
+SELECT prod_descripcion, LENGTH(prod_descripcion) AS largo FROM productos
+
+	//me devuelve la cantidad de caracteres de la columna descripcion
+-------------------------------------------------------------------------------------
+
+SELECT prod_descripcion, LENGTH(prod_descripcion) AS tamanio FROM productos WHERE LENGTH(Prod_descripcion)>10
+
+
+//me devuelve solo los productos que tengan mayor a 10 caracteres

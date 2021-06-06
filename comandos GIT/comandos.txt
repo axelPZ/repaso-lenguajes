@@ -1,0 +1,65 @@
+
+------------------------se agrega un repositorio de git----------------------------------------------------------------
+
+git init 					 iniciamos el repositorio de git.
+
+git add .    					agrega todos los archivos.
+
+git commit -m "primer commit"	  		crea el primer commit
+
+----------------------despues de esto se crea el repositorio en Github y solo se copian los camandos que aparecen ahi-------
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+git push					se agregan los cambios en gitHub cuando ya se haua creado el repositorio
+
+git checkout --.				regresa todo al ultimo comit
+
+git add 'nombre' 				agregamos el archivo.
+
+git status 					ver el estatus del archivo.
+
+git add 'nombre' 				cuando ya ahiga sido agregado, es guardado
+
+
+git.config.email  "tu email" 			agrega un email
+
+git.config.name "tu nombre" 			agrega tu nombreg
+
+git log  					muestra los commit que se an echo
+
+
+git reset --soft "mas el id del commit" 	regresammos a un estatus anterior si borrar el siguiente
+
+git reset --hart "mas el id del commit" 	regresamos a un estado aneterior y se borra el siguiente
+
+git log 					"ver todos los commit que se hicieron anteriormente"
+
+git branch 					"ver el nombre de nuestro repositorio master
+
+git remote -v 					"ver las url de HEROKU"
+
+git checkout					"Regresa asta el ultimo comit que hayamos echo"
+
+git tag -a v1.0.0 -m "Rest Server Basico"	"Crear un tags"
+
+git push --tags					"subimos el tag a gitHub
+
+git rm "nombre del archivo" --cached		"borramos del repositorio"
+
+git commit -am "descripcion de lo que hicimos  " agregar y hacer el comit de un solo"
+
+heroku config					"ver variables de entorno de heroku"
+
+heroku config:set nombre="axel"			"agregamos una nueva variable de entorno a heroku
+
+heroku config:unset "nombre de la variable"	"borrar la variable de entorno
+
+heroku logs -n 100				"para ver los primeros 100 logs en tiempo real de heroku"
+
+heroku logs -n 100 --tail		ver  en tiempo real los primeros 100 logs
+
+
+
+    
+

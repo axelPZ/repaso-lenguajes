@@ -1,0 +1,14 @@
+
+
+CONCAT_WS(separador,col1,col2,col3...)
+
+	separador = entre comillas se pone el separador
+
+//nos devuelve las columnas que queramos en un solo campo y separa las columnas por el separador que le emos indicado
+----------------------------------------------------------------------------------------------------------------------
+
+SELECT CONCAT_WS(" - ", prod_descripcion, prod_color, prod_precio) AS cancatenado FROM productos
+
+
+//me concatena las columnas separadas por el -
+

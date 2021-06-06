@@ -1,0 +1,5 @@
+
+SELECT DISTINCT(ventas_CLIID) AS cliente FROM ventas
+
+
+//nos devuelve los clientes que a comprado, pero no repite

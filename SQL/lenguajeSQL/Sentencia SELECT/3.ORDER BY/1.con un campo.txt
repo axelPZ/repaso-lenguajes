@@ -1,0 +1,15 @@
+SELECT * FROM productos ORDER BY Prod_Precio Desc
+
+
+//ordena el "Prod_Precio" de la tabla "productos" de forma decendentee
+------------------------------------------------------------------------------------
+
+SELECT * FROM productos ORDER BY Prod_Precio ASC
+
+
+//ordena el "Prod_Precio" de la tabla "productos" de forma ascendente
+------------------------------------------------------------------------------------
+
+SELECT * FROM productos ORDER BY Prod_Descripcion desc
+
+//tambien se puede con campos de tipo texto y los ordenara alfabeticamente ya sea ascendente o decendente

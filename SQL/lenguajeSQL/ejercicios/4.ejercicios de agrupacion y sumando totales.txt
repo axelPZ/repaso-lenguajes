@@ -1,0 +1,26 @@
+
+TRAEER LA CANTIDAD DE PROCUTOS QUE SE HAN VENDIDO
+
+	SELECT COUNT(DISTINCT(vd_prodId)) AS cantidad
+	FROM productos
+		JOIN ventas_detalle ON prod_id = vd_prodId
+
+-------------------------------------------------------------------------------------------------------------------
+
+TRAER EL TOTAL VENDIDO DE LOS PRODUCTOS QUE FUERON VENDIDOS ENTRE EL 02/01/2018 Y EL 10/01/2018 Y CUYO PROVEEDOR SE ENCUENTRE
+ENTRE EL 2 Y EL 100
+
+	SELECT SUM((vd_precio * vd_cantidad)) AS 'total'
+		FROM ventas_detalle
+			JOIN productos ON vd_prodId = prod_id
+			JOIN ventas ON vd_ventasId = ventas_id
+				WHERE (ventas_fecha BETWEEN '2018-01-02' AND '2018-01-10') AND 
+					(prod_provid BETWEEN 2 and 100)
+----------------------------------------------------------------------------------------------------------------
+
+TRAER LA FACTURA DE VALOR MAXIMO, QUE HAYA TENIDO EN SUS ITEMS VENDIDOS, EL PRODUCTO 656
+
+	SELECT MAX(ventas_total), vd_prodid
+		FROM ventas_detalle
+			JOIN ventas ON vd_ventasid = ventas_id
+				WHERE vd_prodid = 352

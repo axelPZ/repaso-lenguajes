@@ -1,0 +1,5 @@
+
+SELECT UNCOMPRESS(COMPRESS(prod_descripcion)) AS descomprimido FROM productos
+
+
+	//desencripta la comlumna al mismo tiempo que intentamos encriptarla

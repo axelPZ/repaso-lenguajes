@@ -1,0 +1,35 @@
+
+
+TRAER FECHAS DE FACTURA, NUMERO DE FACTUR, ID DEL CLIENTE, RAZON SOCIAL DEL CLIENTE, Y MONTO TOTAL VENDIDO
+
+	SELECT ventas_fecha AS fecha, ventas_nrofactura AS 'numero factura', ventas_cliId 
+			AS 'cliente', cli_razonSocial AS 'Nombre', ventas_total AS total
+				FROM ventas ,clientes  WHERE ventas.ventas_cliId = clientes.cli_Id
+
+
+	SELECT ventas_fecha AS fecha, ventas_nrofactura AS 'numero factura', ventas_cliId 
+			AS 'cliente', cli_razonSocial AS 'Nombre', ventas_total AS total
+				FROM ventas 
+					JOIN clientes ON ventas_cliid = cli_id
+
+--------------------------------------------------------------------------------------------------------------------------------
+TRAER FECHA DE FACTURA, NRO DE FACTURA, ID DEL PRODUCTO, DESCRIPCION DEL PRODUCTO, ID PROVEEDOR, NOMBRE DE PROVEEDOR, CANTIDAD,
+PRECIO UNITARIO Y PARCIAL(CANTIDAD * PRECIO)
+
+	SELECT ventas_fecha, ventas_nroFactura, vd_prodid AS producto, prod_descripcion, prod_provid, prov_nombre,
+		vd_cantidad, vd_precio, (vd_precio * vd_cantidad) AS total
+			FROM ventas
+				JOIN ventas_detalle ON vd_ventasid = ventas_id 
+				JOIN productos ON vd_prodid = prod_id
+				JOIN proveedores ON prod_provid = prov_id
+
+--------------------------------------------------------------------------------------------------------------------------------
+TRAER TODOS LOS PRODUCTOS QUE HAYAN SIDO VENDIDOS ENTRE EL 2018-01-02 Y EL 2018-01-10 (SIN REPETIR) Y CALCULANDO LA CANTIDAD DE
+UNIDADES VENDIDAS
+
+SELECT ventas_fecha AS fecha, vd_prodid AS producto, prod_descripcion AS descripcion ,SUM(vd_cantidad) AS 'unidades vendidas'
+	FROM productos 
+		JOIN ventas_detalle ON vd_prodid = prod_id
+		JOIN ventas ON vd_ventasid = ventas_id
+			WHERE ventas_fecha BETWEEN '2018-01-02' AND '2018-01-10'
+					GROUP BY producto

@@ -1,0 +1,13 @@
+LEFT JOIN
+
+	me respeta los datos a la izquierda de la peticion, quiere decir que va a mostrar los datos de la tabla de la izquierda aunque no tenga datos a la derecha
+
+
+
+SELECT * FROM alumno LEFT JOIN cursos ON curso_alumnoId = alumno_id
+
+
+//me muestra a los alumnos con su respectivo curso,, aunque hay alumnos que no tienen cursos, esto es por que
+	alumno queda en la izquierda y
+	cursos queda en la derecha
+	

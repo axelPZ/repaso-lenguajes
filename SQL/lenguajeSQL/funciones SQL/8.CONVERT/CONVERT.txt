@@ -1,0 +1,17 @@
+
+CONVERT(dato, tipo)
+
+	dato  = el dato que queremos  convertir
+	tipo  = al tipo de dato al cual lo vamos a convertir
+--------------------------------------------------------------------------
+
+SELECT CONVERT("2018-01-02", DATE) AS fecha from productos 
+
+
+//me convierte el estring en tipo de fecha
+--------------------------------------------------------------- 
+
+SELECT CONVERT("08:25:00", TIME) AS hora from productos 
+
+//me convierte el string en tipo hora
+

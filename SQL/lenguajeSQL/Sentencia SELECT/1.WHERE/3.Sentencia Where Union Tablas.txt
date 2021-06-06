@@ -1,0 +1,17 @@
+
+
+SELECT Ventas_Fecha, Ventas_NroFactura, Ventas_CliID, Cli_RazonSocial AS 'Nombre' FROM ventas,clientes WHERE ventas_CliID=Cli_Id
+
+//mandamos a llamar campos de la tabla ventas ="Ventas_Fecha, Ventas_NroFactura, Ventas_CliID"
+//y campos de la tabla clientes = Cli_RazonSocial
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT Ventas_Fecha, Ventas_NroFactura, Ventas_CliID, Cli_RazonSocial AS 'Nombre' FROM ventas,clientes WHERE ventas.ventas_CliID=clientes.Cli_Id
+
+//si por alguna razon todas las llaves primarias de las tablas las tenemos con el nombre id, entonces tendriamos que indicar la tabla y el campo
+-------------------------------------------------------------------------------------------------------------------------------------------------
+aqui es obligatorio el WHERE
+
+luego le decimos que coinsidan los campos de ventas ventas_CliID con el campo Cli_Id de clientes,
+
+para hacer mas optima la base de datos estos campos que usamos para hacer la busqueda tienen que ser de tipo key

@@ -1,0 +1,7 @@
+SELECT * FROM ventas_detalle, productos
+  WHERE vd_prodID=Prod_Id
+     ORDER BY Prod_Precio desc
+
+
+//se mandan a llamar dos tablas unidas por los campos "vd_prodID" y "Prod_Id"  y se ordenan 
+//de forma decendente de acuerdo al campo "Prod_Precio" de la tabla "productos"

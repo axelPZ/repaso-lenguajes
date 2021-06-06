@@ -1,0 +1,14 @@
+
+AEZ_ENCRYPT(columna, llave)
+	
+	columna = la columna que queremos encriptar
+	llave   = la llave con que la encriptaremos y la que vamos a usar para despues desencriptar
+
+	//nos devuelve un campo encriptado
+----------------------------------------------------------------------------------------------
+
+SELECT prod_descripcion, AES_ENCRYPT(prod_descripcion, 'desencriptar') AS 'descripcion encriptado' FROM productos
+
+
+	//nos devuelve el campo descripcion encriptado
+---------------------------------------------------------------------------------------------

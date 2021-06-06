@@ -1,0 +1,20 @@
+
+DATEDIFF(fecha1, fecha2)
+
+	
+
+	fecha1  = tiene que ser la fecha mas sercana o mas grade
+	fecha2  = tiene que se la fecha mas lejana o mas pequenia
+
+//me devuelve la diferencia entre dos fechas
+-----------------------------------------------------------------------------
+
+SELECT DATEDIFF("2020-01-01", "2018-01-01") AS intervalo
+
+//me devuelve la diferencia entre dos fechas
+-------------------------------------------------------------------
+
+SELECT DATEDIFF(NOW(),ventas_fecha) AS intervalo FROM ventas
+
+
+//me devuelve la diferencia entre la fecha_ventas y la fecha actual

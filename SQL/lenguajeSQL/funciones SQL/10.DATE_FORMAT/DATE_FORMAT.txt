@@ -1,0 +1,22 @@
+
+
+DATE_FORMAT(campo, formato)
+
+	campo   =  el campo que queremos cambiar de formato
+	formato =  el formato que queremos darle
+
+	%Y 	=  me devuelve le anio(0000)
+	%m 	=  me devuelve el mes (00)
+	%d 	=  me devuelve el dia (00)
+	%y 	=  me devuelve le anio(00)
+	%M 	=  me devuelve el mes (July)
+	%D 	=  me devuelve el dia (2do)
+
+//le da formato a las fechas
+--------------------------------------------------------------------
+
+
+SELECT DATE_FORMAT(ventas_fecha, "%Y del mes %m dia %d") AS resultado FROM ventas
+
+//le cambia el formato al toda columna vnetas_fecha
+----------------------------------------------------------------------------

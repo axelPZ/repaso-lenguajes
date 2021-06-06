@@ -1,0 +1,4 @@
+SELECT MAX(Ventas_Total) AS 'Venta Maxima' FROM ventas WHERE MONTH(ventas_fecha)=1 AND YEAR(ventas_fecha)=2018 AND DAY(ventas_fecha)=2
+
+
+//nos devuelve la venta maxima "dia =2 mes =1 del anio=2018)

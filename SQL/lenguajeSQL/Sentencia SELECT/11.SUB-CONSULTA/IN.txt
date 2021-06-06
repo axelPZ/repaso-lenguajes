@@ -1,0 +1,13 @@
+
+SELECT prod_id, prod_descripcion FROM productos WHERE prod_status IN (1,0)
+
+//nos trae los productos cuyo estatus sea igual a uno o cero
+--------------------------------------------------------------------------------
+
+
+la diferencia del IN() es que el nos trae los clientes que si coinsiden en anbas consultas
+
+SELECT CLI_Id AS 'numero Cliente', Cli_RazonSocial AS nombre FROM clientes WHERE cli_id NOT IN(SELECT DISTINCT(ventas_CLIID) AS cliente FROM ventas WHERE MONTH(ventas_fecha)=1 AND YEAR(ventas_fecha)=2018)
+
+
+//aqui nos trae los clientes que si an comprado en el mes de enero del 2018

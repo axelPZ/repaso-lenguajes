@@ -1,0 +1,7 @@
+
+SELECT * FROM alumno RIGHT JOIN cursos ON curso_alumnoId = alumno_id
+union
+SELECT * FROM alumno LEFT JOIN cursos ON curso_alumnoId = alumno_id
+
+//une dos peticiones ,
+	para hacer esto tiene que ser las mismas tablas mismos campos

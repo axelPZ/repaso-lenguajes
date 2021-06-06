@@ -1,0 +1,21 @@
+
+SELECT YEAR(ventas_fecha) AS anio, MONTH(ventas_fecha) AS mes, SUM(ventas_total) AS total
+	FROM ventas
+		GROUP BY anio, mes
+			HAVING total >1000000
+
+
+//nos devuelve la suma total por mes, y con el HAVING nos hace la condicion que solo muestre los que son mayores a 1000000
+---------------------------------------------------------------------------------------------------
+
+
+SELECT prod_id, prod_descripcion, prod_color, SUM(vd_cantidad) AS unidades
+	FROM productos
+		JOIN ventas_detalle ON prod_id=VD_prodId
+		JOIN ventas ON vd_ventasid = ventas_id
+			WHERE prod_provId=1 AND ventas_fecha BETWEEN "2018-01-01" AND "2018-02-14"
+				GROUP BY prod_id
+					HAVING Unidades > 20
+						ORDER BY unidades desc
+
+

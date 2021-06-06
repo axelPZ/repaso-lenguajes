@@ -1,0 +1,15 @@
+con AS seguido del nombre en comillas simples, le creamos un alias a los nombres de las columnas, para que los muestre en la salida
+
+
+			ejemplo
+
+SELECT Ventas_Id AS 'ID', Ventas_Fecha AS 'FECHA', Ventas_Total AS 'TOTAL', Ventas_Iva AS 'IVA' FROM ventas
+
+//le colocamos un alias a cada columna para que se muestre en la salida
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT  Prod_Id AS 'ID', Prod_Descripcion AS 'DESCRIPCION', Prod_status AS 'ESTATUS', Prod_precio AS 'PRECIO' FROM productos WHERE Prod_precio > 0 AND (Prod_precio < 50 AND Prod_status = 0) OR (Prod_precio >= 50 AND Prod_status =1) 
+
+//se puede colocar en peticiones mas complejas
+
+//esto es muy util cuando queremos exportar la base de datos, y no queremos que aparescan el nombre original de nuestros campos

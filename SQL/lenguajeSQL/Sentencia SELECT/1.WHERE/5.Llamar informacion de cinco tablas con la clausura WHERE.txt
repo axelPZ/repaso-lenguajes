@@ -1,0 +1,27 @@
+
+PRIMERO LE COLOCAMOS UN ALIAS A LAS TABLAS
+
+			Ejemplo
+
+SELECT v.Ventas_Fecha, c.Cli_RazonSocial FROM ventas AS v,clientes AS c WHERE v.ventas_CliID=c.Cli_Id
+
+//le colocamos el alias de "v" a ventas y el de "c" a clientes
+-----------------------------------------------------------------------------------------------------------------
+			llamar datos de cinco tablas
+
+SELECT v.Ventas_CliId, c.Cli_RazonSocial, v.Ventas_NroFactura, v.Ventas_Fecha, d.VD_ProdId, p.Prod_Descripcion, p.Prod_Color, d.VD_Cantidad, d.VD_Precio, pr.Prov_Nombre
+ FROM clientes AS c, ventas AS v, ventas_detalle AS d, productos AS p, proveedores AS pr
+  WHERE v.Ventas_CliId = c.Cli_Id AND d.VD_ProdId=p.Prod_Id AND v.Ventas_Id = d.VD_VentasId AND p.Prod_ProvId=pr.Prov_Id
+
+
+//gracias ala union de las key podemos llamar varias tablas
+----------------------------------------------------------------------------------------------------------------------
+
+SELECT v.Ventas_CliId, c.Cli_RazonSocial, v.Ventas_NroFactura, v.Ventas_Fecha, d.VD_ProdId, p.Prod_Descripcion, p.Prod_Color, d.VD_Cantidad, d.VD_Precio, pr.Prov_Nombre
+  FROM clientes AS c, ventas AS v, ventas_detalle AS d, productos AS p, proveedores AS pr
+    WHERE v.Ventas_CliId = c.Cli_Id AND d.VD_ProdId=p.Prod_Id AND v.Ventas_Id = d.VD_VentasId AND p.Prod_ProvId=pr.Prov_Id
+       AND v.Ventas_Fecha >='2018-01-02' AND v.Ventas_Fecha <= '2018-01-03'
+
+
+//podemos seguir agregando filtros despues de hacer la referencia entre key's,
+//aqui colocamos que nos muestre las fechas mayores a '2018-01-02' y menores a '2018-01-03'

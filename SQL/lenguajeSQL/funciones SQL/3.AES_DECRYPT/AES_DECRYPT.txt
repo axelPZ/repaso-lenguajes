@@ -1,0 +1,13 @@
+
+LENGTH(columna)
+
+	columna = la columna que queremos saver la cantidad de caracteres
+
+	//nos devuelve la cantidad de caracteres de un string
+---------------------------------------------------------------------------------------------------------
+
+SELECT prod_descripcion, AES_DECRYPT(aes_encrypt(prod_descripcion, 'encriptar'),'encriptar') AS desencriptado FROM productos
+
+
+
+//nos ecripta la columna y al mismo tiempo la desencript

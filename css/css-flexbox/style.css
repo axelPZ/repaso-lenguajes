@@ -1,0 +1,124 @@
+
+
+/*https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/*/
+
+p
+{
+    margin: 5px;
+}
+
+.contenedor
+{
+    background-color: blue;
+    padding: 10px;
+    width: 100%;
+    max-width: 95%;
+    margin: 10px;
+}
+
+.caja
+{
+    width: 25px;
+    height: 25px;
+    background-color: #ccc; 
+    border: 1px solid black;
+    margin: 2px;
+}
+
+/*ESTILOS DEL FLEXBOX*/
+
+/*contenedor   1*/
+.cont1
+{
+    display: flex;
+}
+
+/*contenedor 2*/
+.cont2
+{
+    display:flex;
+    flex-direction: column-reverse;
+}
+
+.cont2-1
+{
+    display:flex;
+    flex-direction: row-reverse;
+}
+
+/*contenedor 3*/
+.cont3
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cont3-1
+{
+    display: flex;
+    justify-content: center;
+}
+
+/*contenedor 4*/
+.cont4
+{
+    height: 100px;
+	
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+.cont4-1
+{
+    height: 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.cont4-2
+{
+    height: 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+.cont4-3
+{
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/*contenedor 5*/
+
+.cont5
+{
+    height: 100px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.cont5 .caja1
+{
+    align-self: flex-start;
+}
+
+.cont5 .caja2
+{
+    align-self: center;
+}
+
+.cont5 .caja3
+{
+    align-self: flex-end;
+}
+
+

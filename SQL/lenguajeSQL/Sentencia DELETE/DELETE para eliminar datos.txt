@@ -1,0 +1,17 @@
+
+DELETE FROM alumnos  
+
+//CUIDADO aqui estariamos borrando todos los datos de la tabla alumnos
+---------------------------------------------------------------------------------
+
+
+DELETE FROM alumno WHERE alumno_id =4 
+
+//me elimina el alumno cuyo id sea igual a 4
+-----------------------------------------------------------------------------------
+
+DELETE FROM ventas_detalle 
+	WHERE vd_prodid IN (SELECT prod_id FROM productos WHERE prod_status = 1) 
+
+//elimina el detalle de la venta si  estatus del producto que se vendio sea igual a 1
+---------------------------------------------------------------------------------------

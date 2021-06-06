@@ -1,0 +1,41 @@
+SELECT ventas_fecha, SUM(ventas_total) AS total FROM ventas GROUP BY ventas_fecha
+
+
+//me agrupa el total de ventas por mes
+-------------------------------------------------------------------------------------------
+
+SELECT YEAR(ventas_fecha) AS anio, MONTH(ventas_Fecha) AS mes, DAY(ventas_fecha) AS dia, SUM(ventas_total) AS total FROM ventas GROUP BY anio, mes, dia
+
+
+//me devuelve el total de ventas de cada dia
+-----------------------------------------------------------------------------------------
+
+SELECT YEAR(ventas_fecha) AS anio, MONTH(ventas_Fecha) AS mes, SUM(ventas_total) AS total FROM ventas GROUP BY anio, mes
+
+//al quitar el dia, nos devuelve el total de mes por anio
+----------------------------------------------------------------------------------------
+
+SELECT YEAR(ventas_fecha) AS anio, MONTH(ventas_Fecha) AS mes max(ventas_total) AS 'venta maxima' FROM ventas GROUP BY anio, mes
+
+
+//al cambiar SUM() por MAX() nos devuelve el total de la venta mas alta de cada mes 
+------------------------------------------------------------------------------------
+
+SELECT YEAR(ventas_fecha) AS anio, MONTH(ventas_Fecha) AS mes, DAY(ventas_fecha) AS dia, SUM(ventas_total) AS 'Total de venta' FROM ventas WHERE ventas_cliID=1 GROUP BY anio, mes, dia
+
+
+//nos devuelve la suma total del total de ventas por dia, que hicieron clientes con el id=1
+----------------------------------------------------------------------------------------------------------------
+SELECT YEAR(ventas_fecha) AS anio,
+		 MONTH(ventas_Fecha) AS mes,
+		 SUM(ventas_total) AS 'Total de venta',
+		 MIN(ventas_total) AS 'cantidad Minima',
+		 MAX(ventas_total) AS 'cantidad Maxima',
+		 AVG(ventas_total) AS 'promeido ventas',
+		 COUNT(*) AS 'Total de ventas' 
+FROM ventas WHERE ventas_cliID=1
+GROUP BY anio, mes
+
+
+
+//me devuelve el (TOTAL, MINIMO, MAXIMO, PROMEDIO, CANTIDAD) de ventas del cliente con el id=1 agrupada por mes

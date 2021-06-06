@@ -1,0 +1,13 @@
+
+ADDDATE(fecha,cantidad)
+	
+	fecha    = la columna a la que queremos agregar tiene que ser de tipo fecha
+	cantidad = la cantidad de dias que le vamos a sumar a las fechas
+
+	//dos devuelve una fecha a la cual le a agregado la cantidad de dias que le hemos especificado
+--------------------------------------------------------------------------------------------------
+
+
+	//le agrega 30 dias a las fechas que le emos especificadog
+
+SELECT ventas_fecha AS fecha, ADDDATE(ventas_fecha, 30) AS 'fecha vencimiento' FROM ventas

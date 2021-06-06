@@ -1,0 +1,8 @@
+
+	AD%	=	tenga AD al inicio
+	%AD	=	tenga AD al final 
+	%AD%    =	tenga AD en cualquier parte
+
+SELECT prod_id, prod_descripcion, prod_color FROM productos WHERE CONCAT(prod_descripcion, prod_color) LIKE '%AD%'
+
+//nos trae los productos que contengan AD en cualquier parte, de las columnas (prod_descripcion y prod_color)

@@ -1,0 +1,92 @@
+
+WHERE
+
+nos sirve para crear filtros y hacer busquedas espesificas
+-----------------------------------------------------------------------------------
+
+
+AS
+
+nos sirve para crearle alias ya sea a las tablas como a las comunas
+-----------------------------------------------------------------------------------
+
+
+ORDER BY
+
+
+nos devuelve ordenado los registros ya sea el alfabeticamente com numericament y esto lo devuelve ya sea desendente como asendente
+-----------------------------------------------------------------------------------
+
+
+SUM
+
+nos suma toda una columna, ejemplo(el total de ventas)
+-----------------------------------------------------------------------------------
+
+COUMT
+
+
+nos devuelve el todal de datos de una columna,ejemplo(total de ventas)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MAX
+
+
+nos devuelve el numero maximo de una columna,ejemplo(la venta mas alta)
+---------------------------------------------------------------------------------------
+
+MIN
+
+nos devuelve le numero minimo de una columna,ejemplo(la venta minima del mes)
+------------------------------------------------------------------------------------------
+
+GROUP BY
+
+//nos devuelve una grupo de segmentos, ya sea el total por mes de todo un anio
+-------------------------------------------------------------------------------------------------
+
+DISTINCT
+
+//no repite los valores
+----------------------------------------------------------------------------------
+
+BETWEEN 
+
+//nos trae los datos por un rango, ejemplo(de una fecha a otra), (cantidad a otra cantidad)
+-------------------------------------------------------------------------------------------------
+
+LIKE
+
+//sive para buscar un string en campos de textog
+-------------------------------------------------------------------------------
+
+CONCAT 
+
+//concatena dos columnas para buscar un determinadoo texto
+------------------------------------------------------------------------------
+
+JOIN 
+
+//sirve para unir tablas
+---------------------------------------------------------------------------------------
+
+IF
+
+//para crear condiciones
+--------------------------------------------------------------------------------------------
+
+CASE
+
+//cuando hay mas de dos condiciones
+---------------------------------------------------------------------------------------------
+
+SUBSTR
+
+//substrae parte de un estring o texto
+------------------------------------------------------------------------------------------
+
+
+HAVING
+
+//al funciona en conjuncion con el GROUP BY y es como el WHERE la diferencia es que trabaja con los datos de salida y
+ no con lo de entrada como lo hace el WHERE

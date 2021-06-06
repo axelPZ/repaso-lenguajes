@@ -1,0 +1,10 @@
+
+
+SELECT prod_descripcion AS nombre, prod_precio AS precio, prod_id AS id
+	FROM productos WHERE prod_id NOT IN(SELECT DISTINCT(VD_prodID) FROM ventas_detalle, ventas
+			WHERE vd_ventasID=ventas_id AND ventas_fecha > '2018-01-02')
+
+
+
+trae todos los productos que no se an vendido  a partir del 2018-01-02
+----------------------------------------------------------------------------------------------------

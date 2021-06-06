@@ -1,0 +1,21 @@
+
+
+SELECT SUM(ventas_total) AS 'Total ventas' FROM ventas;
+
+//sumamos todas las columnas 'ventas_total' y le agregamos un alias 'Total ventas' o [Total Ventas];
+------------------------------------------------------------------------------------------------------------------
+
+SELECT SUM(ventas_total) AS 'Total ventas' FROM ventas WHERE MONTH(ventas_fecha)=1
+
+//le agregamos una condicion, para que nos traiga el total del mes de enero
+---------------------------------------------------------------------------------------------------------------
+
+SELECT SUM(ventas_total) AS 'Total ventas' FROM ventas WHERE MONTH(ventas_fecha)=1 AND YEAR(ventas_Fecha)=2018
+
+//agregamos otra condicion, para que traiga las ventas del mes 1 del anio 2018
+
+-------------------------------------------------------------------------------------------------------------------
+
+SELECT SUM(ventas_total) AS 'Total ventas' FROM ventas WHERE MONTH(ventas_fecha)=1 AND YEAR(ventas_fecha)=2018 AND DAY(ventas_fecha)=2
+
+//agregamos la tercera condicion y esta nos trae el total de las ventas del dia 2 del mes 1 del anio 2018

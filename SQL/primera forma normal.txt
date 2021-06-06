@@ -1,0 +1,5 @@
+
+	   reglas de la primera forma normal
+	--------------------------------------
+
+ no se deben repetir datos en una tabla. cuando tenemos

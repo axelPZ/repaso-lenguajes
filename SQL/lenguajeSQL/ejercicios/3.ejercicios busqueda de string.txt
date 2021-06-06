@@ -1,0 +1,21 @@
+
+TRAER TODOS LOS ARTICULOS CUYA DESCRIPCION COMIENCE CON LA PALABRA 'SUBTERRANEO'
+
+	SELECT prod_descripcion AS nombre, prod_id FROM productos WHERE prod_descripcion LIKE 'SUBTERRANEO%'
+
+-----------------------------------------------------------------------------------------------------------------
+
+TRAER TODOS LOS ARTICULOS QUE EN SU DESCRIPCION O COLOR O NOMBRE DE PROVEEDOR TENGA EL STRING 'FERRO'
+
+
+	SELECT prod_descripcion AS nombre, prod_color AS color, prov_nombre AS proveedor 
+		FROM productos 
+			JOIN proveedores ON prod_provid = prov_id
+				WHERE CONCAT(prod_descripcion,prod_color,prov_nombre) LIKE '%FERRO%'
+--------------------------------------------------------------------------------------------------------------------------
+
+TRAER TODOS LOS ARTICULOS CUYA DESCRIPCION TENGA EL STRING 'CINTA' Y QUE TENGA VENTAS REALIZADAS
+
+	SELECT * FROM productos 
+		WHERE  prod_id IN(SELECT vd_prodid FROM ventas_detalle )
+			AND  prod_descripcion LIKE '%cinta%'

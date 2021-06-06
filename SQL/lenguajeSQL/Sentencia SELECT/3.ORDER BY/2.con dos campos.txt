@@ -1,0 +1,5 @@
+SELECT * FROM productos 
+   ORDER BY Prod_Status desc, Prod_Descripcion asc
+
+
+//ordenamos "Prod_Status" de forma decendente y "Prod_Descripcion" de forma ascendente

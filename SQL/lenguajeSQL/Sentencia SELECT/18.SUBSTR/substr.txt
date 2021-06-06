@@ -1,0 +1,6 @@
+
+SELECT prod_id, prod_descripcion, SUBSTR(prod_descripcion, 1,10) AS parte FROM productos
+
+
+
+//me substrae los caracteres solo del 1 al 10

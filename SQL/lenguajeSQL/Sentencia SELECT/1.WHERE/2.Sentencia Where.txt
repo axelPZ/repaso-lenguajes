@@ -1,0 +1,41 @@
+				WHERE
+
+SELECT 1mer_Columna, 2da_columna FROM nombre_tabla WHERE name_columna filtro
+
+				ejemplo
+
+SELECT Prod_Descripcion FROM productos WHERE prod_Id =2
+
+//manda a llamar la columna d"escripcion" de la tabla "productos" cuyo id sea igual a "2"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+				COMPUESTAS
+
+SELECT * FROM nombre_tabla WHERE campo>0 AND (campo=0 OR campo=1 AND compa=97))
+
+
+
+SELECT * FROM PRODUCTOS WHERE PROD_PRECIO>0 AND (PROD_STATUS=0 OR (PROD_STATUS=1 AND PROD_PROVID=97))
+
+//seleccione todas las columnas de la tabla "productos" cuyo "precio" sea mayor a 0 y (que la columna "estatus" sea igual a 0 o (cuando "prod_status"=1 que el "id proveedor" = 97) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT ventas_fecha, Ventas_CliId, Ventas_Total from ventas WHERE Ventas_Fecha > '2018-01-03' AND Ventas_fecha < '2018-01-03'
+
+//seleccioname las columnas "Ventas_Fecha", "Ventas_CliId","Ventas_Total" de la tabla "Ventas" donde "Ventas_fecha" sea mayor a 2018-01-03 y "Ventas_fecha" sea menor a 2018-01-03 
+//seleccionara los campos en el intervalo de la fecha
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT ventas_fecha, Ventas_CliId, Ventas_Total FROM ventas WHERE Ventas_Fecha > '2018-01-03' AND Ventas_fecha < '2018-01-03' AND Ventas_CliId <> 1 AND Ventas_total > 1000
+
+//seleccioname las columnas "Ventas_Fecha", "Ventas_CliId","Ventas_Total" de la tabla "Ventas" donde "Ventas_fecha" sea mayor a 2018-01-03 y "Ventas_fecha" sea menor a 2018-01-03,
+//y que "Ventas_CliID"  sea diferente a 1 y "Ventas_total"  sea mayor a 1000 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT  Prod_Id, Prod_Descripcion, Prod_status, Prod_precio FROM productos WHERE Prod_precio > 0 AND (Prod_precio < 50 AND Prod_status = 0) OR (Prod_precio <= 50 AND Prod_status =1) 
+
+//selecciona el "Prod_Id", "Prod_Descripcion", "Prod_status", "Prod_precio" de la tabla "productos" donde el "Prod_precio" sea menor a 50 y "Prod_status = 0 "O" si "Prod_precio" es
+//es mayor o igual a 50 entonces que el "Prod_status" sea igual a 1
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT Ventas_Id, Ventas_Fecha, Ventas_CliId, Ventas_NroFactura, Ventas_Total FROM ventas WHERE Ventas_fecha >= '2018-01-01' AND Ventas_fecha <= '2018-01-05' AND (Ventas_CliId = 1 OR (Ventas_CliId <> 1 AND Ventas_Total > 1000))  

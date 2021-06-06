@@ -1,0 +1,33 @@
+
+SELECT prod_id, prod_descripcion FROM productos WHERE prod_status IN (1,0)
+
+//nos trae los productos cuyo estatus sea diferente a uno o cero
+--------------------------------------------------------------------------------
+
+
+SELECT CLI_Id AS 'numero Cliente', Cli_RazonSocial AS nombre FROM clientes WHERE cli_id NOT IN()
+
+//seleccionamos el numero cliente y el nombre, dentro de los parentesis de NOT IN() colocamos la sub consulta
+
+
+SELECT DISTINCT(ventas_CLIID) AS cliente FROM ventas
+
+esta usaremos como nuestra sub consulta, que nos trae todos los id de los clientes que nos an comprado
+
+
+entonces con NO IN() le decimos que nos muestre los clientes que no aparecen dentro de la tabla ventas
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT CLI_Id AS 'numero Cliente', Cli_RazonSocial AS nombre FROM clientes WHERE cli_id NOT IN(SELECT DISTINCT(ventas_CLIID) AS cliente FROM ventas)
+
+
+RESUMEN: la primer consulta nos trae todos clientes,
+	 la segunda consulta nos tre todos los clientres que aparecen en la tabla ventas, o que nos an comprado,
+
+	la consulta nos traera todos los clientes que no nos traiga la segunda consulta, o todos los clientes que no an comprado
+------------------------------------------------------------------------------------------------------------------------------------
+
+SELECT CLI_Id AS 'numero Cliente', Cli_RazonSocial AS nombre FROM clientes WHERE cli_id NOT IN(SELECT DISTINCT(ventas_CLIID) AS cliente FROM ventas WHERE MONTH(ventas_fecha)=1 AND YEAR(ventas_fecha)=2018)
+
+
+//aqui nos trae los clientes que no nos ah comprado en el mes de enero del 2018

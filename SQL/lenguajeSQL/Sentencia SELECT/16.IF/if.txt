@@ -1,0 +1,9 @@
+
+Sintaxis del IF
+		 IF(condicion, si la condicion se cumple, si la condicion no se cumple)
+
+
+SELECT prod_id, prod_descripcion, IF(prod_Status=1, 'Habilitado','Deshabilitado') AS estado FROM productos
+
+
+//me trae las columnas "prod_id" y "prod_descripcion" y le agrega "Habilitado" si es uno y "Desabilitado" si no

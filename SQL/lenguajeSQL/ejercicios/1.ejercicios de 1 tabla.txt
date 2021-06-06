@@ -1,0 +1,32 @@
+
+TRAER LAS FECHAS NUMEROS DE FACTURA Y MONTO TOTAL DE MIS VENTAS
+
+	SELECT ventas_fecha, ventas_NroFactura, ventas_total FROM ventas
+---------------------------------------------------------------------------------------------------
+
+TRAER LOS ID DE PRODUCTOS CANTIDAD Y PRECIO DE MI DETALLE DE VENTAS DE LOS REGISTROS DONDE EL PRECIO SEA MAYOR A 0
+
+	SELECT VD_PRODID, VD_CANTIDAD, VD_PRECIO FROM ventas_detalle WHERE VD_PRECIO > 0
+-------------------------------------------------------------------------------------------------------
+
+TRAER EL TOTAL VENDIDO POR FECHA DE FACTURA
+
+	SELECT ventas_fecha AS fecha, SUM(ventas_total) AS 'total vendido' FROM ventas GROUP BY ventas_fecha
+-----------------------------------------------------------------------------------------
+
+TRAER EL TOTAL VENDIDO POR ANIO Y MES DE FACTURA
+
+	SELECT ventas_fecha AS fecha, SUM(ventas_total) AS total FROM ventas GROUP BY MONTH(fecha), YEAR(fecha)
+------------------------------------------------------------------------------------------------------
+
+
+TRAER LOS PRODUCTOS DE LA TABLA PRODUCTOS QUE PERTENEZCAN AL PROVEEDOR 62
+
+	SELECT * FROM productos WHERE prod_provid = 62
+------------------------------------------------------------------------------------------------
+
+TRAER LA LISTA DE PRODUCTOS VENDIDOS (SOLO SU ID) SIN REPETICIONES Y CON EL TOTAL VENDIDO POR CADA UNO
+
+	SELECT vd_prodid, SUM(vd_precio * vd_cantidad) FROM ventas_detalle GROUP BY vd_prodid 
+
+

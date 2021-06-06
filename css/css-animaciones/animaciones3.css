@@ -1,0 +1,58 @@
+:root
+{
+    /**colores**/
+    --colorPrimario: #FF5B00;
+    --colorSecundario: blue;
+}
+
+.menu3
+{
+    background: #ccc;
+    padding: 5px;
+}
+
+
+.menu3 ul
+{
+    list-style: none;
+    display: flex;
+}
+.menu3 ul a
+{
+    background: var(--colorSecundario);
+    color: white;
+    padding: 10px;
+    margin-left: 5px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+/** ANIMACION PARA EL MUNO **/
+/*si queremos que se origine desde la izquierda cambiar ::before por ::after */
+/**agregamos seudo-selectores**/
+.menu3 ul a::before
+{
+    position: absolute;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorPrimario);
+    z-index: -1;
+    /**para darle un tamanio que no sse mire**/
+    transform: scaleX(0);
+    transition: transform .6s;
+}
+.menu3 ul a::before
+{
+    top: 0;
+    transform-origin: left;
+    /*si queremos desde la izquierda porner lefth*/
+    
+}
+.menu3 ul a:hover::before
+{
+    transform: scaleX(1);
+}

@@ -1,0 +1,5 @@
+
+SELECT ventas_fecha, ventas_cliId, ventas_total FROM ventas WHERE ventas_fecha BETWEEN '2018-01-02' AND '2018-01-31'
+
+
+//me trae las ventas que se realizaron entre el '2018-01-02' al '2018-01-31'

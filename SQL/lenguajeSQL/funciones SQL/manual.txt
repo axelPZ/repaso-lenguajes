@@ -1,0 +1,56 @@
+
+
+ADDDATE()
+	
+	
+//dos devuelve una fecha a la cual le a agregado la cantidad de dias que le hemos especificado
+--------------------------------------------------------------------------------------------------
+
+AEZ_ENCRYPT()
+	
+	
+//nos devuelve un campo encriptado
+----------------------------------------------------------------------------------------------
+
+
+LENGTH()
+
+
+
+//nos devuelve la cantidad de caracteres de un string
+---------------------------------------------------------------------------------------------------------
+
+COMPRESS(columna)
+
+	columna = columna que queremos encriptar
+
+	//nos devuelve la columna encriptada esta no necesita llave
+--------------------------------------------------------------------------
+
+UNCOMPRESS(columna)
+
+	columna = columna que queremos desencriptar
+
+	//nos desencripta la columna encriptada previamentes
+--------------------------------------------------------------------------------
+
+CONCAT_WS()
+
+	
+//nos devuelve las columnas que queramos en un solo campo y separa las columnas por el separador que le emos indicado
+-----------------------------------------------------------------------------------------------------------------
+
+CONVERT()
+
+//le cambia el tipo de dato a un registro
+---------------------------------------------------------------------------
+
+DATEDIFF()
+
+//me devuelve la diferencia entre dos fechas
+
+-----------------------------------------------------------------------------------------------------
+
+DATE_FORMAT()
+
+//me da formato a las fechas

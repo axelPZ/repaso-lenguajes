@@ -1,0 +1,38 @@
+
+
+ SELECT CURRENT_DATE AS FECHA   
+
+//Obtener fecha actual
+--------------------------------------------------------
+
+SELECT CURRENT_TIME AS HORA  
+
+//Obtener la hora
+------------------------------------------------------------
+
+SELECT CURRENT_TIMESTAMP AS FECHA_HORA 
+
+//Obtiene la fecha y la hora
+-------------------------------------------------------------------------------------
+
+SELECT DATABASE() AS BASE_DATOS 
+
+//Obtenemos el nombre de la base de datos
+------------------------------------------------------------------------
+
+SELECT DATEDIFF('2018-06-01','2018-01-01') AS 'dias pasados'
+
+
+//nos devuelve la cantidad de dias que an pasado en ese intervalo de fechas
+----------------------------------------------------------------------------------
+
+SELECT DATEDIFF(CURRENT_DATE, ventas_fecha) AS 'dias trascurridos', ventas_nroFactura FROM ventas
+
+
+//obteniendo los dias que an pasado dependiendo de la fecha que nos retorne la peticion con el FROM
+-------------------------------------------------------------------------------------------------------
+
+SELECT DAYOFWEEK(CURRENT_DATE) AS 'dia de la semana' 
+
+
+//me retorna el numero del dia de la semana 

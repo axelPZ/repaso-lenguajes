@@ -1,0 +1,10 @@
+
+	AD%	=	tenga AD al inicio
+	%AD	=	tenga AD al final 
+	%AD%    =	tenga AD en cualquier parte
+
+
+
+SELECT prod_id, prod_descripcion, prod_color FROM productos WHERE prod_descripcion LIKE 'AD%'
+
+//metrae todos los productos que tienen AD al principio

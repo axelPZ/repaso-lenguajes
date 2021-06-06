@@ -1,0 +1,23 @@
+
+
+UPDATE productos SET prod_status = 0   
+
+
+//me cambia todos los estatus a 0
+----------------------------------------------------------------
+
+UPDATE productos SET prod_status =1 WHERE prod_precio > 0   
+
+//me cambia los estatus cuyo dato sea mayor a cero
+----------------------------------------------------------------------
+
+UPDATE productos SET prod_precio = 0, prod_status=0 WHERE prod_provid=25 
+
+//editar varias columnas
+-------------------------------------------------------------------------------
+
+UPDATE productos SET prod_precio = 100 WHERE prod_Id IN (
+		SELECT prov_id FROM proveedores WHERE prov_comprasuspendida=0)
+
+
+//utilizamos una sub consulta para decirle que solo edite los productos cuya proveedor tenga su columna prov_comprasuspendida igual a 0

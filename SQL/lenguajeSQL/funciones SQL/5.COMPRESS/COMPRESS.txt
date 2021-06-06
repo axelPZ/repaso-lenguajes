@@ -1,0 +1,6 @@
+
+SELECT COMPRESS(prod_descripcion) AS comprimido FROM productos
+
+
+	//me devuelve la columna prod_descripcion comprimida
+--------------------------------------------------------------------------------------------g

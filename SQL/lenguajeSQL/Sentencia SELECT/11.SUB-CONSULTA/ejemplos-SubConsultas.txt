@@ -1,0 +1,42 @@
+las subconsultas puede que no tengan ninguna relacion con la consulta primaria
+las subconsultas solo tienen que devolver una columna
+
+
+SELECT prod_id AS 'articulo', prod_descripcion AS 'descripcion',
+		(SELECT MAX(ventas_fecha) FROM ventas
+			JOIN ventas_detalle ON ventas_id = vd_ventasId
+				WHERE prod_id=1633) AS 'ultima fecha'
+FROM productos WHERE prod_id =1633
+
+
+//aqui solo traemos una sola subconsulta, 
+-------------------------------------------------------------------------------------
+
+SELECT prod_id AS 'articulo', prod_descripcion AS 'descripcion',
+		(SELECT MAX(ventas_fecha) FROM ventas JOIN ventas_detalle ON ventas_id = vd_ventasId WHERE prod_id=1633) AS 'ultima fecha',
+		(SELECT COUNT(DISTINCT(ventas_cliID)) FROM ventas JOIN ventas_detalle ON ventas_id = vd_ventasId WHERE prod_id=1633) AS 'cantidad compradores'
+FROM productos WHERE prod_id =1633
+
+
+
+//podemos seguir agregando sub-consultas deacuerdo como lo nesecitemos
+-----------------------------------------------------------------------------------------------------
+
+
+SELECT prod_id AS 'articulo', prod_descripcion AS 'descripcion' 
+	FROM productos WHERE (SELECT permiso FROM permisos) =1
+
+
+//se pueden colocar sub-consultas despues del WHERE
+------------------------------------------------------------------------------------------
+
+SELECT prod_id AS 'articulo', prod_descripcion AS 'descripcion' 
+	FROM productos WHERE prod_id > 0 AND (SELECT permiso FROM permisos) =1
+
+
+//se pueden agreagar mmas condiciones
+
+
+
+
+
