@@ -7,19 +7,32 @@ git add .    					agrega todos los archivos.
 
 git commit -m "primer commit"	  		crea el primer commit
 
+git push					se agregan los cambios en gitHub cuando ya se haua creado el repositorio
+
 ----------------------despues de esto se crea el repositorio en Github y solo se copian los camandos que aparecen ahi-------
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
-git push					se agregan los cambios en gitHub cuando ya se haua creado el repositorio
+--------------------- agregar un tag a gitHub--------------------------------------------------
+
+git tag						agregar un tag
+
+git tag -a v1.0.0 -m "( mensaje )"		agregamos la version del tag
+
+git push --tags					agregamos el tag a github
+
+
+#Nota: se va gitHub en releases precionamos el ("tag") luego presionamos en la ("version") luego presionamos en "editar", 
+	se agrega u titulo y una nota, por ultimo precionamos en "public realese"
+
+ya podemos descar gar nuestra version de tags
+-------------------------------------------------------------------------------------------------------
+
 
 git checkout --.				regresa todo al ultimo comit
 
-git add 'nombre' 				agregamos el archivo.
 
 git status 					ver el estatus del archivo.
-
-git add 'nombre' 				cuando ya ahiga sido agregado, es guardado
 
 
 git.config.email  "tu email" 			agrega un email
