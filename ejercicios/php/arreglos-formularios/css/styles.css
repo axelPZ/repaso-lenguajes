@@ -1,0 +1,167 @@
+
+/*estilos globales*/
+*{
+    margin: 0;
+    padding-top: 0;
+}
+*:focus
+{
+  outline: none;
+}
+
+html
+{
+    box-sizing: border-box;
+}
+
+.centrado-columna{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.izquierda-columna{
+    display: flex;
+    flex-direction: column;
+}
+
+.campos{
+    width: 100%;
+    padding: .3rem .2rem;
+    border-radius: .5rem;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h3{
+    margin-bottom: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.sombra{
+    -webkit-box-shadow: 2px 2px 15px rgb(12, 12, 12);
+    -moz-box-shadow: 2px 2px 15px rgb(12, 12, 12);
+}
+
+/* CONTENIDO */
+.contenido{
+    width: 100%;  
+}
+
+.principal{
+
+    display: flex;
+    justify-content: space-between;
+
+
+    width: 80%;
+    padding: 2rem;
+    margin-top: 2rem;
+    background: rgba(56, 56, 255, 0.419);
+    border: 1px solid #ccc;
+    border-radius: 20px 20px;
+}
+
+/* FORMULARIO */
+.formulario form{
+
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 2rem;
+
+    background-color: white;
+    border-right: 2px solid rgb(3, 3, 3);
+    border-left: 2px solid rgb(4, 4, 4);
+    border-radius: 10px;
+}
+
+.formulario form div{
+    width: 90%;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.formulario form .btn{
+
+    width: 80%;
+    padding: .3rem;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.formulario form .btn-agregar{
+    background-color: rgba(6, 24, 167, 0.754);
+    color: white;
+    border: 1px solid white;
+}
+
+.formulario form .btn-agregar:hover{
+    background: white;
+    color: rgba(6, 24, 167, 0.754);
+    border: 1px solid rgba(6, 24, 167, 0.754);
+    cursor: pointer;
+}
+
+.formulario form .btn-editar{
+    background-color: rgba(204, 191, 1, 0.754);
+    color: white;
+    border: 1px solid white;
+}
+
+.formulario form .btn-editar:hover{
+    background: white;
+    color: rgba(204, 191, 1, 0.754);
+    border: 1px solid rgba(204, 191, 1, 0.754);
+    cursor: pointer;
+}
+
+/* LISTA DE USUARIOS */
+.lista-usuarios table{
+    width: 80%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    background-color: white;
+}
+
+.lista-usuarios table th, .lista-usuarios table td{
+
+    border-bottom: 1px solid rgba(56, 56, 255, 0.419);
+    border-left: 1px solid rgba(56, 56, 255, 0.419);
+    padding: .4rem .7rem;
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.lista-usuarios table th{
+    background-color: rgba(100, 100, 255, 0.419) ;
+}
+
+.lista-usuarios table td:hover{
+
+    background: rgba(56, 56, 255, 0.419);
+    color: white;
+}
+
+.lista-usuarios table .btn{
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    text-decoration: none;
+}
+
+.lista-usuarios table .btn-eliminar{
+    background-color:rgba(255, 56, 56, 0.419);
+    padding: .2rem;
+    color: white;
+}
+
+.lista-usuarios table .btn-editar{
+    background-color:rgba(255, 248, 56, 0.419);
+    padding: .2rem;
+    color: rgb(179, 179, 179);
+}

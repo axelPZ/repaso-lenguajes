@@ -1,0 +1,21 @@
+
+
+
+1). crear un programa que lea un el archivo "info" y que solo a la linea que contenga "PROCESS END STATE - SALE".
+2). extraer la fecha, solo el dia, mes, anio.
+3). sacar los datos "SALE[400]$", "VOL[164]", "PPU[2439]", "PUMP[7]", y HOSE[1][1], y extraer los valores de los corchetes.
+4). leer la fila "FILES MGMNT" y obtener el "PROD[2]" sacar el valor de los corchetes.
+5). darle nombre segun el valor de producto:
+    1 = SUPER.
+    2 = REGULAR.
+    3 = DIESEL.
+
+5). el valor entre los corchetes y agregarlo a la base de datos, con los siguientes nombre...
+
+SALE[400]$ = monto
+VOL[164] = galones 
+PPU[2439] = precio de venta 
+PUMP[7] = bomba
+HOSE[1][1] = mangera
+
+

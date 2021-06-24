@@ -1,0 +1,8 @@
+
+
+
+
+1). crea un formulario para guardar usuarios.
+2). guardar los usarios en un archivo .json.
+3). listar los usarios.
+4). hacer un CRUD con los usuarios localizados en el .json
