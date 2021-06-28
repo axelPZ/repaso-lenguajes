@@ -1,0 +1,5 @@
+CREAR UNA VISTA
+
+												5). vamos al directorio /resources/views
+
+												6). creamos la vista agregando al final del nombre ".blade.php" ejemplo prueba.blade.php

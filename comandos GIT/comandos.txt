@@ -74,5 +74,8 @@ heroku logs -n 100 --tail		ver  en tiempo real los primeros 100 logs
 
 
 
+
+
+
     
 

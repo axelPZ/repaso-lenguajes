@@ -1,0 +1,18 @@
+
+
+SUBIR IMAGENES A CLOUDINARY
+
+composer require cloudinary-labs/cloudinary-laravel         1). instalacion del SDK de cloudinary, se escribe en comsola
+
+                                                            1). o se a grega a los composer.json: "cloudinary-labs/cloudinary-laravel": "1.0.4"
+
+composer update                                             2). se actualiza el composer
+
+                                                            3). vamos a config/app.php y agregamos el provider de cloudinary: CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
+
+                                                            4). se agrega un alias: 'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
+
+
+php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider" --tag="cloudinary-laravel-config"    5).publicar el archivo de configuracion
+
+                                                            6). se configura los .env para agregar cloudinary_url

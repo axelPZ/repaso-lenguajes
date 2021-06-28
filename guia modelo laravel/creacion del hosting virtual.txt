@@ -1,0 +1,42 @@
+
+CREACION DEL HOSTING VIRTUAL
+
+	1). Hubicar el archivo "httpd.conf" hubicado en "C:\wamp64\bin\apache\apache2.4.46\conf"
+
+	2). encontral la linea de "Virtual hosts" donde nos indicara la ruta donse encuentran los host virtual
+
+	3). "conf/extra/httpd-vhosts.conf" esta es una ruta parcesida o igual.
+
+	4). Vamos a la ruta indicada y abrimos el archivo "httpd-vhosts.conf" y agregamos el siguiente codigo...
+			
+								# VHOST CURSO LARAVEL 8
+									<VirtualHost *:80>    
+    										DocumentRoot "c:/wamp/www/symfony3"
+    										ServerName symfony3.com.devel	
+    										ServerAlias www.symfony3.com.devel
+										<Directory "c:/wamp/www/symfony3/web">
+											Options Indexes FollowSymLinks		
+											AllowOverride All
+											Order Deny,Allow
+											Allow from all		
+										</Directory>	
+									</VirtualHost> 
+
+	5).  Editamos lo que agregamos
+		5.1). <VirtualHost *:80>  														|| este es el puerto
+		5.2). DocumentRoot "${INSTALL_DIR}/www/modelo-laravel/modelo-laravel/public" 	|| aqui agregamos la ruta de la carpeta publica de nuestro proyecto
+		5.3). <Directory "${INSTALL_DIR}/www/modelo-laravel/modelo-laravel/public"> 	|| aqui copiamos la misma ruta
+		5.4). ServerName modelo-laravel.devel 											|| agregamos el nombre del server
+		5.5). ServerAlias www.modelo-laravel.devel 										|| agregamos un alias, que es el nombre del server pero al principio con las www
+
+	6). editar el archivo "hosts" hubicado en: C:\Windows\System32\drivers\etc
+	
+	7). 127.0.0.1 modelo-laravel.devel 													|| agregamos el domino que nos llevara al host que creamos, el cual tiene que llevar el nombre del "server"
+	
+	8). reiniciamos el wampServer
+
+	9). http://modelo-laravel.devel/													|| agregamos este dominio en el buscador, y nos redirigira a nuestro proyecto
+
+
+
+	

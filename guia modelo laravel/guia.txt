@@ -1,0 +1,176 @@
+// SABER MAS DE LARAVEL
+												https://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdf
+
+// DOCUMENTACION DE POSTMAN
+
+												https://documenter.getpostman.com/view/12638722/TzedfPVz
+
+INSTALACION DE LARAVEL
+
+
+composer create-project laravel/laravel modelo-laravel "8.*" --prefer-dist		1). creamos nuestro proyecto de laravel con composer
+
+
+CREACION DEL HOST VIRTUAL
+
+												1). ver el manual de como crear el host-virtual
+
+
+CONECCION A LA BASE DE DATOS
+
+												1). despues de crear la base de datos vamos al archivo ".env" para conectar la base de datos
+
+
+CREACION DE LOS MODELOS
+
+php artisan make:model "nombre del modelo"		1). crear el modelo de categoria
+
+
+
+CREAR CONTROLADORES
+
+php artisan make:controller UserController		1). creamos el controlador del usuario 
+
+												2). para usar el controlador en las rutas hay que importarlo: use App\Http\Controllers\PruebaController;
+
+
+
+VER LAS RUTAS
+
+php artisan route:list							1). ver las rutas que tenemos disponibles
+
+
+
+CREAR LAS RUTAS
+
+												1). vamos al archivo /routes/web.php
+
+												2). para utilizar el metodo de tipo post, put, delete se comenta en el Kernel el "VerifyCsrfToken"
+
+												3). si no se quiere comentar el VerifyCsrfToken
+
+													3.1) con postman. en el test agregar ( pm.environment.set("xsrf-token", decodeURIComponent(pm.cookies.get("XSRF-TOKEN"))); )
+
+													3.2) se agrega un Environment con el nombre "xsrf-token"
+
+													3.3) en los headers se agrega una variable X-XSRF-TOKEN con el valor del Environment xsrf-token. 
+
+													3.4) para ver el ejemplo: https://dev.to/shane/using-postman-with-java-spring-and-csrf-tokens-di0
+
+													3.5) ver https://documenter.getpostman.com/view/12638722/TzedfPVz  en nombre "POST con la seguridad VerifyCsrfToken, "
+
+
+CREAR MIDDLEWARE
+
+php artisan make:middleware 'nombre' 			1). en la consola ingresamos este comando
+
+											    2). se agrega el middleware en el Kernel, si se quiere usar en las rutas, se agrega en: protected $routeMiddleware = []
+
+												3). se le agrega un nombre y la ruta. ejemplo. 'nombre' => ruta::class ('validateIdUser' => \App\Http\Middleware\checkId::class)
+
+												4). se agrega a las rutas a las cuales van a usar el middleware
+
+
+
+CREAR UN HERLPER
+
+												1). en app/ se crea una carpeta llamada helpers, y adentro de esta un archivo con el nombre del helper
+
+												2). se crea un provider
+
+
+CREAR UN PROVIDER
+
+php artisan make:provider "nombre"				1). se agrega el provider
+
+												2). en register se ingresa la ruta del helper que utilizaremos con el provider
+
+												3). se agrega el provider en config/app en el area de providers se agrega nuestro provider:  App\Providers\validateInputs::class
+
+												4). en el archivo config/app en el area de aliases le agregaremos un alias a nuestro helper: 'validateInputs' => App\helpers\validation::class
+
+
+CREAR EL LOGIN
+
+												1). se crea el controlador AuthController y el metodo para logear el usario
+
+												2). se crea la ruta 
+
+												3). se crea un middleware que valide los campos que nos mandaran desde el front-ent
+
+
+
+TRABAJAR CON JWT
+
+
+composer require firebase/php-jwt				1). se instala la libreria del php-jwt
+
+"firebase/php-jwt" : "version"					1). o se agrega en composer.json
+
+composer update									2). actualiza composer y las librerias que emos agregado
+
+												3). crear un helper que genere el JWT
+
+												4). crear un provider y asignarle el helper del JWT
+
+												5). agregar la llave del JWT a los env
+
+												6). traer la llave de los env para codificar el JWT: $llave = env('SECRETORPRIVATEKEY', 'smtp');
+
+												7). crear token
+
+
+VALIDAR JWT
+
+												1). se crea un middleware para validar el token
+
+												2). se trae la llave desde los .env
+
+												3). se agrega a las rutas
+
+
+VALIDAR SI EL ROL ES DE ADMIN
+
+												1). se crea un middleware para validar el rol
+
+
+FUNCION DE BUSCAR
+
+
+												1). crear la ruta
+
+												2). crear el controlador
+
+
+FUNCION DE SUBIR ARCHIVOS
+
+												1). se crea la carpeta "images" aqui se guardaran las imagenes, se crea en: storage/app
+
+												2). se agregan las carpetas al filesistem hubicada en config/filesistems, debajo de la ya existente public
+																'nombre-carpeta' => [
+																	'driver' => 'local',
+																	'root' => storage_path('app/' nombre-carpeta ' '),
+																	'url' => env('APP_URL').'/storage',
+																	'visibility' => 'public',
+																],
+
+												3). se crea la ruta, las cual tiene que ser de tipo POST, ya que no va a reconocer los file si se manda en otra 
+												
+												4). crear controlador y el metodo para subir la imagen
+
+												4). se crea un helper que valide el id con la tabla de usuarios, productos y categorias, dependiendo de la coleccion
+
+												5). se crea un middleware que valide las colecciones
+
+												6). se crea un middleware que valide el archivo y sus extenciones, en este caso que se a una imagen
+
+												7). se crea un helper para guardar la imagen y agregarla al usuario, categoria o producto, dependiendo de la coleccion
+
+												8). saver mas de los ficheros // https://laravel.com/docs/8.x/requests#files
+
+
+
+// DEVOLVER IMAGEN
+
+
+												1). se crea la ruta y el metodo en UploadsController											
