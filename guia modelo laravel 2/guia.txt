@@ -1,0 +1,200 @@
+// SABER MAS DE LARAVEL
+												https://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdf
+
+
+// DOCUMENTACION DE POSTMAN
+												pendiente
+
+
+INSTALACION DE LARAVEL
+
+composer create-project laravel/laravel modelo-laravel "8.*" --prefer-dist		1). creamos nuestro proyecto de laravel con composer
+
+
+
+CREACION DEL HOST VIRTUAL
+												1). ver el manual de como crear el host-virtual
+
+
+
+CONECCION A LA BASE DE DATOS
+												1). despues de crear la base de datos vamos al archivo ".env" para conectar la base de datos
+
+
+CREACION DE MODELOS
+
+php artisan make:model "nombre" -m                  1). creamos nuestro modelo y con -m nuestro archivo de migracion
+
+
+
+AGREGAR EL SOFT DELETE
+
+$table->softDeletes();                                      1). se agrega a la migracion de la tabla
+
+protected $dates = ['deleted_at'];                          2). se agrega al modelo del usuario, y se importa de: use Illuminate\Database\Eloquent\SoftDeletes;
+
+                                                            3). mas informacion en: https://rimorsoft.com/borrado-logico-metodo-softdeletes-en-laravel
+
+
+CREAR MIGRACION
+
+php artisan make:migration create_"nombre de la tabla"_table       1). crear solo la migracion
+
+
+
+MIGRAR LA TABLA USER
+
+                                                1). Vamos a la carpeta /database/migrations  y encontraremos un archivo con la fecha en la que se creo y con "create_user_table"
+
+                                                2). abrimos el archivo y agregamos las columnas con su tipo y longitud
+
+php artisan migrate                             3). para migrar la nuestra tabla a la base de datos
+
+                                                3). mas informacion: https://styde.net/modificar-tablas-ya-existentes-con-las-migraciones-de-laravel/
+
+
+
+CONFIGURAR EL MODELO
+                                                                
+
+
+CREAR CONTROLADOR 
+
+php artisan make:controller "nombre" --api --model="nombre del modelo"              1). creamos el controlador
+                                                                                        1.1) "nombre",      el nombre del controlador
+                                                                                        1.2) --api,         nos crea los metodos del CRUD en el controlador
+                                                                                        1.3) --model="",    le indicamos con que modelo trabajara el controlador 
+
+
+
+VER LAS RUTAS
+
+php artisan route:list							1). ver las rutas que tenemos disponibles
+
+
+
+CREAR FORM REQUEST
+
+php artisan make:request "NombreRequest"                    1). crear el form request
+
+
+                                                            2). se agregan las reglas de validacion: mas reglas... https://laravel.com/docs/5.5/validation#available-validation-rules
+
+CREAR MIDDLEWARE
+
+php artisan make:middleware 'nombre' 			1). en la consola ingresamos este comando
+
+											    2). se agrega el middleware en el Kernel, si se quiere usar en las rutas, se agrega en: protected $routeMiddleware = []
+
+												3). se le agrega un nombre y la ruta. ejemplo. 'nombre' => ruta::class ('validateIdUser' => \App\Http\Middleware\checkId::class)
+
+												4). se agrega a las rutas a las cuales van a usar el middleware o se agrega en el constructor del controlador
+
+
+
+CREAR UN HERLPER
+
+												1). en app/ se crea una carpeta llamada helpers, y adentro de esta un archivo con el nombre del helper
+
+												2). se crea un provider
+
+
+
+CREAR UN PROVIDER
+
+php artisan make:provider "nombre"				1). se agrega el provider
+
+												2). en register se ingresa la ruta del helper que utilizaremos con el provider
+
+												3). se agrega el provider en config/app en el area de providers se agrega nuestro provider:  App\Providers\validateInputs::class
+
+												4). en el archivo config/app en el area de aliases le agregaremos un alias a nuestro helper: 'validateInputs' => App\helpers\validation::class
+
+
+VALIDACION DE ROL
+                                                1) Se crea un modelo y la migracion a la base de datos 
+
+                                                2) se crea el middleware para que valide el rol antes que la funcion del controlador
+
+                                                3). se agrega el middleware al controlador
+
+
+CREAR EL LOGIN
+
+												1). se crea el controlador AuthController y el metodo para logear el usario
+
+												2). se crea la ruta 
+
+												3). se crea un formRequest que valide los campos que nos mandaran desde el front-ent
+
+
+
+
+TRABAJAR CON JWT
+
+
+composer require firebase/php-jwt				1). se instala la libreria del php-jwt
+
+"firebase/php-jwt" : "version"					1). o se agrega en composer.json
+
+composer update									2). actualiza composer y las librerias que emos agregado
+
+												3). crear un helper que genere el JWT
+
+												4). crear un provider y asignarle el helper del JWT
+
+												5). agregar la llave del JWT a los env
+
+												6). traer la llave de los env para codificar el JWT: $llave = env('SECRETORPRIVATEKEY', 'smtp');
+
+												7). crear token
+
+
+
+VALIDAR JWT
+
+												1). se crea un middleware para validar el token
+
+												2). se trae la llave desde los .env
+
+												3). se agrega a las rutas
+
+
+VALIDAR SI EL ROL ES DE ADMIN
+
+												1). se crea un middleware para validar el rol
+
+
+BUSCAR
+                                                1). se crea el controlador para buscar
+
+                                                2). crear el middleware que valide las colecciones
+
+                                                3). crear los metodos de busqueda
+
+
+SUBIR IMAGENES                      
+
+												1). se crea la carpeta "images" aqui se guardaran las imagenes, se crea en: storage/app
+
+												2). se agregan las carpetas al filesistem hubicada en config/filesistems, debajo de la ya existente public
+																'nombre-carpeta' => [
+																	'driver' => 'local',
+																	'root' => storage_path('app/' nombre-carpeta ' '),
+																	'url' => env('APP_URL').'/storage',
+																	'visibility' => 'public',
+																],
+
+												3). se crea la ruta, las cual tiene que ser de tipo POST, ya que no va a reconocer los file si se manda en otra 
+												
+												4). crear controlador y el metodo para subir la imagen
+
+												5). se crea un helper que valide el id con la tabla de usuarios, productos y categorias, dependiendo de la coleccion
+
+												6). se crea un formRequest para validat que envien la imagen
+
+												7). se crea un helper para guardar la imagen y agregarla al usuario, categoria o producto, dependiendo de la coleccion
+
+												8). saver mas de los ficheros // https://laravel.com/docs/8.x/requests#files
+
+
