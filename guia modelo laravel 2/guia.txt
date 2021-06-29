@@ -1,9 +1,8 @@
-// SABER MAS DE LARAVEL
-												https://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdf
+// SABER MAS DE LARAVEL                 https://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdfhttps://grupomenta.com/wp-content/uploads/2021/01/laravel-api-creation.pdf
 
 
-// DOCUMENTACION DE POSTMAN
-												pendiente
+// DOCUMENTACION DE POSTMAN				https://documenter.getpostman.com/view/12638722/TzkyLzCW
+
 
 
 INSTALACION DE LARAVEL
@@ -12,13 +11,16 @@ composer create-project laravel/laravel modelo-laravel "8.*" --prefer-dist		1). 
 
 
 
-CREACION DEL HOST VIRTUAL
-												1). ver el manual de como crear el host-virtual
+
+CREACION DEL HOST VIRTUAL               1). ver el manual de como crear el host-virtual
+
+
+CONECCION A LA BASE DE DATOS            1). despues de crear la base de datos vamos al archivo ".env" para conectar la base de datos
 
 
 
-CONECCION A LA BASE DE DATOS
-												1). despues de crear la base de datos vamos al archivo ".env" para conectar la base de datos
+
+                            ||||||||| EMPEZAR A PROGRAMAR |||||||||
 
 
 CREACION DE MODELOS
@@ -27,13 +29,15 @@ php artisan make:model "nombre" -m                  1). creamos nuestro modelo y
 
 
 
+
 AGREGAR EL SOFT DELETE
 
-$table->softDeletes();                                      1). se agrega a la migracion de la tabla
+$table->softDeletes();                              1). se agrega a la migracion de la tabla
 
-protected $dates = ['deleted_at'];                          2). se agrega al modelo del usuario, y se importa de: use Illuminate\Database\Eloquent\SoftDeletes;
+protected $dates = ['deleted_at'];                  2). se agrega al modelo del usuario, y se importa de: use Illuminate\Database\Eloquent\SoftDeletes;
 
-                                                            3). mas informacion en: https://rimorsoft.com/borrado-logico-metodo-softdeletes-en-laravel
+                                                    3). mas informacion en: https://rimorsoft.com/borrado-logico-metodo-softdeletes-en-laravel
+
 
 
 CREAR MIGRACION
@@ -42,15 +46,17 @@ php artisan make:migration create_"nombre de la tabla"_table       1). crear sol
 
 
 
+
 MIGRAR LA TABLA USER
 
-                                                1). Vamos a la carpeta /database/migrations  y encontraremos un archivo con la fecha en la que se creo y con "create_user_table"
+                                                    1). Vamos a la carpeta /database/migrations  y encontraremos un archivo con la fecha en la que se creo y con "create_user_table"
 
-                                                2). abrimos el archivo y agregamos las columnas con su tipo y longitud
+                                                    2). abrimos el archivo y agregamos las columnas con su tipo y longitud
 
-php artisan migrate                             3). para migrar la nuestra tabla a la base de datos
+php artisan migrate                                 3). para migrar la nuestra tabla a la base de datos
 
-                                                3). mas informacion: https://styde.net/modificar-tablas-ya-existentes-con-las-migraciones-de-laravel/
+                                                    3). mas informacion:                 https://styde.net/modificar-tablas-ya-existentes-con-las-migraciones-de-laravel/
+                                                    3.1) informacion de llaver foraneas: https://styde.net/crear-y-asociar-tablas-usando-las-migraciones-de-laravel-con-claves-foraneas/
 
 
 
@@ -69,63 +75,66 @@ php artisan make:controller "nombre" --api --model="nombre del modelo"          
 
 VER LAS RUTAS
 
-php artisan route:list							1). ver las rutas que tenemos disponibles
+php artisan route:list							    1). ver las rutas que tenemos disponibles
+
 
 
 
 CREAR FORM REQUEST
 
-php artisan make:request "NombreRequest"                    1). crear el form request
+php artisan make:request "NombreRequest"            1). crear el form request
 
 
-                                                            2). se agregan las reglas de validacion: mas reglas... https://laravel.com/docs/5.5/validation#available-validation-rules
+                                                    2). se agregan las reglas de validacion: mas reglas... https://laravel.com/docs/5.5/validation#available-validation-rules
 
 CREAR MIDDLEWARE
 
-php artisan make:middleware 'nombre' 			1). en la consola ingresamos este comando
+php artisan make:middleware 'nombre' 			    1). en la consola ingresamos este comando
 
-											    2). se agrega el middleware en el Kernel, si se quiere usar en las rutas, se agrega en: protected $routeMiddleware = []
+											        2). se agrega el middleware en el Kernel, si se quiere usar en las rutas, se agrega en: protected $routeMiddleware = []
 
-												3). se le agrega un nombre y la ruta. ejemplo. 'nombre' => ruta::class ('validateIdUser' => \App\Http\Middleware\checkId::class)
+												    3). se le agrega un nombre y la ruta. ejemplo. 'nombre' => ruta::class ('validateIdUser' => \App\Http\Middleware\checkId::class)
 
-												4). se agrega a las rutas a las cuales van a usar el middleware o se agrega en el constructor del controlador
+												    4). se agrega a las rutas a las cuales van a usar el middleware o se agrega en el constructor del controlador
 
 
 
-CREAR UN HERLPER
+CREAR UN HERLPER    
+												    1). en app/ se crea una carpeta llamada helpers, y adentro de esta un archivo con el nombre del helper
 
-												1). en app/ se crea una carpeta llamada helpers, y adentro de esta un archivo con el nombre del helper
+												    2). se crea un provider
 
-												2). se crea un provider
 
 
 
 CREAR UN PROVIDER
 
-php artisan make:provider "nombre"				1). se agrega el provider
+php artisan make:provider "nombre"				    1). se agrega el provider
 
-												2). en register se ingresa la ruta del helper que utilizaremos con el provider
+                                                    2). en register se ingresa la ruta del helper que utilizaremos con el provider
 
-												3). se agrega el provider en config/app en el area de providers se agrega nuestro provider:  App\Providers\validateInputs::class
+												    3). se agrega el provider en config/app en el area de providers se agrega nuestro provider:  App\Providers\validateInputs::class
 
-												4). en el archivo config/app en el area de aliases le agregaremos un alias a nuestro helper: 'validateInputs' => App\helpers\validation::class
+												    4). en el archivo config/app en el area de aliases le agregaremos un alias a nuestro helper: 'validateInputs' => App\helpers\validation::class
+
 
 
 VALIDACION DE ROL
-                                                1) Se crea un modelo y la migracion a la base de datos 
+                                                    1) Se crea un modelo y la migracion a la base de datos 
 
-                                                2) se crea el middleware para que valide el rol antes que la funcion del controlador
+                                                    2) se crea el middleware para que valide el rol antes que la funcion del controlador
 
-                                                3). se agrega el middleware al controlador
+                                                    3). se agrega el middleware al controlador
+
 
 
 CREAR EL LOGIN
 
-												1). se crea el controlador AuthController y el metodo para logear el usario
+												    1). se crea el controlador AuthController y el metodo para logear el usario
 
-												2). se crea la ruta 
+												    2). se crea la ruta 
 
-												3). se crea un formRequest que valide los campos que nos mandaran desde el front-ent
+												    3). se crea un formRequest que valide los campos que nos mandaran desde el front-ent
 
 
 
@@ -133,21 +142,21 @@ CREAR EL LOGIN
 TRABAJAR CON JWT
 
 
-composer require firebase/php-jwt				1). se instala la libreria del php-jwt
+composer require firebase/php-jwt				    1). se instala la libreria del php-jwt
 
-"firebase/php-jwt" : "version"					1). o se agrega en composer.json
+"firebase/php-jwt" : "version"					    1). o se agrega en composer.json
 
-composer update									2). actualiza composer y las librerias que emos agregado
+composer update									    2). actualiza composer y las librerias que emos agregado
 
-												3). crear un helper que genere el JWT
+												    3). crear un helper que genere el JWT
 
-												4). crear un provider y asignarle el helper del JWT
+												    4). crear un provider y asignarle el helper del JWT
 
-												5). agregar la llave del JWT a los env
+												    5). agregar la llave del JWT a los env
 
-												6). traer la llave de los env para codificar el JWT: $llave = env('SECRETORPRIVATEKEY', 'smtp');
+												    6). traer la llave de los env para codificar el JWT: $llave = env('SECRETORPRIVATEKEY', 'smtp');
 
-												7). crear token
+												    7). crear token
 
 
 
@@ -198,3 +207,14 @@ SUBIR IMAGENES
 												8). saver mas de los ficheros // https://laravel.com/docs/8.x/requests#files
 
 
+
+CREAR LAS CATEGORIAS
+                                                1). crear el modelo junto con la migracion,
+
+                                                2). se configura la migracion y se agrega a la DB
+
+                                                3). se crea el controlador con todo y sus metodos y se le indica el modelo que va usuar
+
+                                                4). se crean las rutas
+
+                                                5). para crear categoria y editarla se usa el formRequest
