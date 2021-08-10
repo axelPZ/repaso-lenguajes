@@ -1,0 +1,15 @@
+1).					si se esta usando linux solo se abre la terminal, y se dirige donde se encuentra el archivo .pem, que se descargo
+					anteriormente al crear la instancia.
+
+2).					si se usa Windows, instalar el programa Cygwin64, Terminal
+3).					se dirige donde se encuencuentra el archivo .pem
+4).chmod 0400 "nombre del archivo" 	Se le dan permisos al .pem
+
+5).ssh -i "nombre .pem" "nombre instancia"@"IP"
+
+	"nombre .pem" 	   =	Nombre del archivo .pem
+	"nombre instancia" =	Nombre de la instancia elegida
+	"IP"		   =    direccion ip
+
+ejemplo del paso 5			ssh -i servidornodejs.pem ubuntu@52.14.24.19
+	

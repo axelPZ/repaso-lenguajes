@@ -1,0 +1,15 @@
+
+		INSTALAR NODEJS EN UBUNTU
+
+url de referencia
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+
+
+1.) sudo apt update 				actualizar los repositorios
+2.) sudo apt install nodejs			instalar nodejs
+3.) nodejs -v					tiene que aparecer la version de nodejs si ya esta instalado
+
+
+	INSTALAR NPM
+1). sudo apt install npm			instalar npm
+2). npm -v					tiene que aparecer la version de npm si ya esta instalado

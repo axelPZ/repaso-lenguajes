@@ -1,0 +1,49 @@
+url de referencia https://docs.rackspace.com/support/how-to/install-mysql-server-on-the-ubuntu-operating-system/
+
+	IMPORTANTE!!! 
+Nota: no probar estos comandos, para acceder a remoto ver abajo
+	sudo ufw enable
+	sudo ufw allow mysql
+
+
+1). sudo apt update				Se actualizan los repositorios de ubuntu
+2). sudo apt-get install mysql-server 		Se instala mysql
+3). sudo mysql_secure_installation utility	si no se inicia la configuracion de MySql, con este comando se iniciara
+4). 						configurar Mysql
+5).sudo systemctl start mysql			se inicia el servicio de mysql
+6).sudo systemctl enable mysql			iniciar el servicio de mysql al servidor
+7).sudo systemctl restart mysql			reinicar Mysql
+
+
+			INGRESAR A MYSQL
+1). sudo mysql -u "ususario" -p			en algunas ocaciones se puede ingresar a mysql sin contrasenia en ese caso
+2). sudo mysql -u "usuario"			ingresar sin contrasenia
+
+
+
+			HABILITAR REMOTO ACCESO REMOTO
+	para acceder a remoto hay que crear un nuevo usuario, ya que no se le permite a root
+
+url de referencia 
+https://devopsarticle.com/install-create-backup-restore-mysql-on-ubuntu-20-04-lts-6-easy-steps/
+
+1). sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf	para editar el archivo mysqld.cnf, en bin-addres poner la direccion IP en 0.0.0.0 Y agregar el skip-external-locking, si no lo tuviera
+2). sudo systemctl restart mysql			restaurar mysql
+3). sudo systemctl enable mysql				levantar el servicio de mysql,
+4). systemctl status mysql.service			ver el estatus del servicio de mysql,ejemplo( Active: active (running) )
+5). ss -ltn						ver en que puerto esta escuchando mysql
+6). sudo ufw allow from any to any port 3306 proto tcp  Utilice el siguiente comando para permitir el puerto 3306 de MySQL en el firewall de Ubuntu
+
+
+			CREAR USUARIO Y DARLE PERMISOS  PARA QUE ACCEDA REMOTO
+
+1). sudo mysql -u root -p								acceder a la base de datos con usuario root
+2). mysql> CREATE USER 'devopsarticle'@'%' IDENTIFIED BY 'dev@!12345';			crear usuario y otorgarle permisos para acceder remoto
+3). mysql> GRANT ALL PRIVILEGES ON *.* TO 'nombre U'@'%';				dar permisos de administrador en romoto al usuario 
+4). mysql> ALTER USER 'nombre' IDENTIFIED WITH mysql_native_password BY 'password';	para que nodejs, pueda acceder a mysql, y hacer cambios
+4). mysql> FLUSH PRIVILEGES;								guardar cambios
+5). mysql> exit										SALIR
+
+	si lo que se quiere es darle permisos al usuario solo a una base de datos hay que crear la base de datos y luego darle permisos sobre ella
+
+mysql> GRANT ALL PRIVILEGES ON nombredb.* to nombreU@'%';

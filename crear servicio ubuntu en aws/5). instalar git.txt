@@ -1,0 +1,10 @@
+
+	
+		INSTALAR GIT
+
+url de referencia
+https://linuxize.com/post/how-to-install-git-on-ubuntu-18-04/
+
+1). sudo apt update			actualizar los repositorios
+2). sudo apt install git 		isntalar git
+3). git -version 			ver la version de git

@@ -1,0 +1,6 @@
+
+1). se copia la url del repositorio
+
+2).sudo git clone url		la url es la que nos brinda la pagina donde este alojado el repositorio
+
+3).sudo npm install		para que se instalen los monulos de node

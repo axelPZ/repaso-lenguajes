@@ -1,0 +1,10 @@
+
+
+		INSTALAR PM2
+
+https://www.npmjs.com/package/pm2
+para que node se quede ejecutando en segundo plano
+
+
+1). sudo  npm install pm2 -g		para instalar de forma global pm2
+2). pm2 start node app.js		iniciar el servidor de node en segundo plano

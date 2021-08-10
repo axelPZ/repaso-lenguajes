@@ -1,0 +1,11 @@
+
+
+heroku config					"ver variables de entorno de heroku"
+
+heroku config:set nombre="axel"			"agregamos una nueva variable de entorno a heroku
+
+heroku config:unset "nombre de la variable"	"borrar la variable de entorno
+
+heroku logs -n 100				"para ver los primeros 100 logs en tiempo real de heroku"
+
+heroku logs -n 100 --tail		ver  en tiempo real los primeros 100 logs

@@ -1,0 +1,22 @@
+1).			crear/ingresar a la cuenta de AWS
+2).			ir a servicios
+3).			luego a EC2
+4).			ir a instancias
+5).			ir a lanzar instancias
+6).			elegir el servidor, en este caso: Ubuntu Server 20.04 LTS
+7).			se elige el tipo de instancia, en este caso t2 micro, por que es gratuito y le damos en "siguiente"
+8).			configuracion de la instancia, solo le damos siguiente.
+9).			adicion de almacenamiento, solo le damos siguiente.
+10).			Agregar etiquetas, solo le damos siguiente.
+11).			Configure Security Group, le dejamos el 22 que es el puerto por defecto, donde se conecta el SSH
+12).			Agregamos un nuevo puerto y typo de conneccion. 
+			para la base de datos(Mysql) utiliamos: Tipo: TCP, Puerto 3306, IP, 0.0.0.0/0, para que sea publica
+			para NodeJs utilizamos:			Tipo: TCP, Puerto 8000, IP, 0.0.0.0/0, para que sea publica
+13).			le damos en revisar y lanzar
+14). 			click en lanzar
+15).			seleccionamos en crear clave y le agregamos un nombre "servidornodejs"
+16). 			le damos en descargar, nos descarga una clave .pem que nos servira para conectarnos desde SSH
+17).			le damos en lanzar instancia, y luego en ver instancia
+
+ACCEDER ALA INSTANCIA ATRAVEZ DE UNA TERMINAL LINUX
+					

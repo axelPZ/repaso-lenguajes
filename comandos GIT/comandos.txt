@@ -13,6 +13,25 @@ git push					se agregan los cambios en gitHub cuando ya se haua creado el reposi
 
 -----------------------------------------------------------------------------------------------------------------------------------
 
+---------------------RAMAS de git -----------------------------------------------------------
+https://git-scm.com/book/es/v2/Ramificaciones-en-Git-%C2%BFQu%C3%A9-es-una-rama%3F
+
+git branch					listar las ramas, a la que le aparesca un * es en la que nos encontramos
+
+git branch "nombre"				crear una nueva rama
+
+git log --oneline --decorate			ver a que commit apunta cada rama
+
+git checkout "nombre"				cambiar de rama
+
+git push origin "nombre"			para agregar cambios, nombre, es el nombre de la rama
+
+git pull origin "nombre"			para jalar los cambios que hayan agregado en la rama, "nombre"
+
+
+https://github.com/axelPZ/Nodejs-Myql.git
+-----------------------------------------------------------------------------------------------------------------------------------
+
 --------------------- agregar un tag a gitHub--------------------------------------------------
 
 git tag						agregar un tag
@@ -28,49 +47,25 @@ git push --tags					agregamos el tag a github
 ya podemos descar gar nuestra version de tags
 -------------------------------------------------------------------------------------------------------
 
-
-git checkout --.				regresa todo al ultimo comit
-
-
 git status 					ver el estatus del archivo.
 
+git log  					muestra los commit que se an echo
+
+git checkout --.				regresa todo al ultimo comit
 
 git.config.email  "tu email" 			agrega un email
 
 git.config.name "tu nombre" 			agrega tu nombreg
 
-git log  					muestra los commit que se an echo
-
-
 git reset --soft "mas el id del commit" 	regresammos a un estatus anterior si borrar el siguiente
 
 git reset --hart "mas el id del commit" 	regresamos a un estado aneterior y se borra el siguiente
 
-git log 					"ver todos los commit que se hicieron anteriormente"
 
-git branch 					"ver el nombre de nuestro repositorio master
 
-git remote -v 					"ver las url de HEROKU"
 
-git checkout					"Regresa asta el ultimo comit que hayamos echo"
 
-git tag -a v1.0.0 -m "Rest Server Basico"	"Crear un tags"
 
-git push --tags					"subimos el tag a gitHub
-
-git rm "nombre del archivo" --cached		"borramos del repositorio"
-
-git commit -am "descripcion de lo que hicimos  " agregar y hacer el comit de un solo"
-
-heroku config					"ver variables de entorno de heroku"
-
-heroku config:set nombre="axel"			"agregamos una nueva variable de entorno a heroku
-
-heroku config:unset "nombre de la variable"	"borrar la variable de entorno
-
-heroku logs -n 100				"para ver los primeros 100 logs en tiempo real de heroku"
-
-heroku logs -n 100 --tail		ver  en tiempo real los primeros 100 logs
 
 
 
